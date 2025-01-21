@@ -15,10 +15,29 @@
         
         .nav-link {
             font-weight: 500;
+            position: relative;
+            padding: 8px 15px !important;
+            margin: 0 5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #dc3545;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .hero-section {
-            background: linear-gradient(rgba(33, 37, 41, 0.8), rgba(33, 37, 41, 0.8)),
+            background: linear-gradient(rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.6)),
                         url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
@@ -31,6 +50,18 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff !important;
         }
     </style>
     <!-- Bootstrap Icons -->
