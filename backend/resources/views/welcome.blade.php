@@ -86,7 +86,7 @@
                         <a class="nav-link" href="#">Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cars</a>
+                    <a href="{{ route('cars') }}">Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Dashboard</a>
