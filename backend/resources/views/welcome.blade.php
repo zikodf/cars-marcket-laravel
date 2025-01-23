@@ -1,78 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomobil - Car Rental Service</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-        }
+@extends('layouts.app')
 
-        .hero-section {
-            background: linear-gradient(rgba(33, 37, 41, 0.8), rgba(33, 37, 41, 0.8)),
-                        url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            min-height: 80vh;
-        }
+@section('styles')
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.6)),
+                    url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        min-height: 80vh;
+    }
 
-        .feature-card {
-            transition: transform 0.3s ease;
-        }
+    .feature-card {
+        transition: transform 0.3s ease;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-    </style>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="text-danger">Tomo</span>bil
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cars</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+</style>
+@endsection
 
+@section('content')
     <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center text-light">
         <div class="container text-center">
             <h1 class="display-3 fw-bold mb-4">Premium Car Rental Service</h1>
             <p class="lead mb-4">Experience luxury and comfort with our premium fleet of vehicles</p>
-            <button class="btn btn-danger btn-lg px-5 py-3 rounded-pill">
+            <a href="{{ route('cars') }}" class="btn btn-danger btn-lg px-5 py-3 rounded-pill">
                 Book Now <i class="bi bi-arrow-right ms-2"></i>
-            </button>
+            </a>
         </div>
     </section>
 
@@ -111,8 +67,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection
